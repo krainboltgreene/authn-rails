@@ -1,0 +1,2 @@
+require 'authn'
+require 'rails'
