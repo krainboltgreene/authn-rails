@@ -1,7 +1,7 @@
 module AuthN
   # The AuthN engine takes care of extending ActiveRecord (if used) and ActionController,
   # With the plugin logic.
-  class Engine < Rails::Engine
+  class Engine < ::Rails::Engine
     config.authn = AuthN.config
 
     initializer "Extend ActionController with AuthN" do |app|
