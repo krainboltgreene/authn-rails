@@ -33,8 +33,3 @@
 # /test/tmp/
 # /test/version_tmp/
 
-# Ignore sub-gems
-/lib/authn/activation
-/lib/authn/recovery
-/lib/authn/protection
-/lib/authn/rails
