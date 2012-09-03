@@ -1,1 +1,1 @@
-require 'authn'
+require 'authn-rails'
