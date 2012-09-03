@@ -7,10 +7,10 @@ Gem::Specification.new do |gem|
   gem.name          = "authn-rails"
   gem.version       = AuthN::Rails::VERSION
   gem.authors       = ["Kurtis Rainbolt-Greene"]
-  gem.email         = ["kurtisrainboltgreene@gmail.com"]
+  gem.email         = ["me@kurtisrainboltgreene.name"]
   gem.summary       = %q{The plugin library for AuthN and Rails}
   gem.description   = gem.summary
-  gem.homepage      = "http://github.com/krainboltgreene/authn-rails"
+  gem.homepage      = "http://krainboltgreene.github.com/authn-rails"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
