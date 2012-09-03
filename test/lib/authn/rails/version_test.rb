@@ -7,6 +7,6 @@ class TestAuthNRailsVersion < MiniTest::Unit::TestCase
   end
 
   def test_that_version_is_latest
-    assert_equal "1.0.0", AuthN::Rails::VERSION
+    assert_equal "1.2.0", AuthN::Rails::VERSION
   end
 end

@@ -1,20 +1,22 @@
-AuthN (Rails)
--------------
+AuthN Rails
+-----------
 
-authn-rails is an extention of the AuthN library.
+authn-rails is an extention of the AuthN library to give easy integration into Rails framework.
 
-Using AuthN
-===========
+
+Using AuthN Rails
+=================
 
 To start using authn you simply need to install and hook up to your existing "user" model:
 
 ``` ruby
 # create_table :accounts do |t|
-#   t.string :email, null: false, default: nil
-#   t.binary :password_digest, null: false, default: nil
+#   t.string :email
+#   t.binary :password_digest
+#
 #   t.timestamps
 # end
-# add_index :accounts, :email, unique: true
+# add_index :accounts, :email
 #
 
 class Account < ActiveRecord::Base
@@ -27,7 +29,6 @@ class Account < ActiveRecord::Base
   validates :password, length: 10..1024
 
   attr_accessible :email
-  attr_accessible :password, :password_confirmation
 end
 ```
 
@@ -38,35 +39,35 @@ We'll you can see their own pages, but here's a taste:
 
 ``` ruby
 # create_table :accounts do |t|
-#   t.string :email, null: false, default: nil
-#   t.binary :password_digest, null: false, default: nil
+#   t.string :email
+#   t.binary :password_digest
 #
-#   t.string :activation_token, default: nil
-#   t.boolean :activation_state, null: false, default: false
-#   t.datetime :activation_expires_at, default: nil
+#   t.string :activation_token
+#   t.boolean :activation_state, default: false
+#   t.datetime :activation_expires_at
 #
-#   t.string :password_recovery_token, default: nil
-#   t.datetime :password_recovery_expires_at, default: nil
+#   t.string :password_recovery_token
+#   t.datetime :password_recovery_expires_at
 #
-#   t.string :login_protection_token, default: nil
-#   t.datetime :login_protection_expires_at, default: nil
+#   t.string :login_protection_token
+#   t.datetime :login_protection_expires_at
 #   t.integer :login_protection_attempts, default: 0
 #
 #   t.timestamps
 # end
-# add_index :accounts, :email, unique: true
-# add_index :accounts, :activation_token, unique: true
+# add_index :accounts, :email
+# add_index :accounts, :activation_token
 # add_index :accounts, :activation_state
-# add_index :accounts, :password_recovery_token, unique: true
-# add_index :accounts, :login_protection_token, unique: true
+# add_index :accounts, :password_recovery_token
+# add_index :accounts, :login_protection_token
 #
 
 class Account < ActiveRecord::Base
   include AuthN::Model
 
   has_authentication
-  has_password_recovery mailer: PasswordRecoveryMailer
-  has_activation mailer: ActivationMailer, on_create: false
+  has_password_recovery mailer: "PasswordRecoveryMailer"
+  has_activation mailer: "ActivationMailer", on_create: false
   has_login_protection maximum: 3, redirect: { controller: :accounts, action: :maximum_login_failure }
   has_secure_password
 
@@ -74,7 +75,6 @@ class Account < ActiveRecord::Base
   validates :password, length: 10..1024
 
   attr_accessible :email
-  attr_accessible :password, :password_confirmation
 end
 ```
 
@@ -84,8 +84,8 @@ authn assumes quite a few things, but never stops you from changing how it works
 As above you can change how each of your "user" models functions (for say admin recovery emails vs support recovery emails).
 In addition you can either programatically write the "global" configuration or have a `authn.yml` file ready to be loaded.
 
-Installing AuthN (Rails)
-========================
+Installing AuthN Rails
+======================
 
 Add this line to your application's Gemfile:
 
