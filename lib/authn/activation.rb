@@ -3,11 +3,7 @@ require_reative 'activation/actionmailer' if defined?(ActionMailer)
 module AuthN
   module Activation
     module ClassMethods
-      private
-
-      def send_activation_mail
-
-      end
+      include AuthN::Activation::ActionMailer if defined?(ActionMailer)
     end
   end
 end
