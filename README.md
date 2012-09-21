@@ -82,7 +82,8 @@ You'll notice that there are options after some of the addon singleton methods.
 These are used to overwrite the global configuration.
 authn assumes quite a few things, but never stops you from changing how it works.
 As above you can change how each of your "user" models functions (for say admin recovery emails vs support recovery emails).
-In addition you can either programatically write the "global" configuration or have a `authn.yml` file ready to be loaded.
+You can programatically write the "global" configuration by editing the `config/initializers/authn.rb` file.
+
 
 Installing AuthN Rails
 ======================
@@ -104,9 +105,10 @@ However if you want to fine tune your AuthN install simply run this generator:
 
     $ rails generate authen:config
 
-To install the config files of the addons simply use:
+If you want to use a model for users other than the default "Account":
 
-    $ rails generate authen:config:[addonname]
+    $ rails generate authen:config --model SomeUserModel
+
 
 Contributing
 ============
@@ -116,6 +118,7 @@ Contributing
   3. Commit your changes (`git commit -am 'Add some feature'`)
   4. Push to the branch (`git push origin my-new-feature`)
   5. Create new Pull Request
+
 
 License
 =======
