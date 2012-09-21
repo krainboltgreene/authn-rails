@@ -1,0 +1,14 @@
+Description:
+  This will generate the configuration file (should you need it) to
+  modify AuthN's configuration.
+
+Examples:
+  rails generate authn:config
+
+    This will generate an commented-out config file. Change and update if
+    you need to. AuthN doesn't require this config file to exist.
+
+  rails generate authn:config --model SomeUserModel
+
+    This generates the config file but with a specific model in for the
+    default "User" model. Default Value: Account
