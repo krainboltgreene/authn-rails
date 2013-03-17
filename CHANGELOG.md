@@ -1,6 +1,11 @@
 CHANGELOG
 ---------
 
+1.7.4 / 2012-09-21
+==================
+
+  * Removing call to astruct in gemspec, as authn already uses it
+
 1.7.3 / 2012-09-21
 ==================
 
