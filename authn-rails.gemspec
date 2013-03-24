@@ -3,24 +3,27 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'authn/rails/version'
 
-Gem::Specification.new do |gem|
-  gem.name          = "authn-rails"
-  gem.version       = AuthN::Rails::VERSION
-  gem.authors       = ["Kurtis Rainbolt-Greene"]
-  gem.email         = ["me@kurtisrainboltgreene.name"]
-  gem.summary       = %q{The plugin library for AuthN and Rails}
-  gem.description   = gem.summary
-  gem.homepage      = "http://krainboltgreene.github.com/authn-rails"
+Gem::Specification.new do |spec|
+  spec.name          = "authn-rails"
+  spec.version       = AuthN::Rails::VERSION
+  spec.authors       = ["Kurtis Rainbolt-Greene"]
+  spec.email         = ["me@kurtisrainboltgreene.name"]
+  spec.summary       = %q{The rails integration for authn}
+  spec.description   = spec.summary
+  spec.homepage      = "http://krainboltgreene.github.com/authn-rails"
 
-  gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.require_paths = ["lib"]
+  spec.files         = `git ls-files`.split($/)
+  spec.executables   = spec.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
 
-  gem.add_runtime_dependency 'authn', '~> 3.0'
-  gem.add_runtime_dependency 'rails', '~> 3.2'
-  gem.add_development_dependency 'yard'
-  gem.add_development_dependency 'kramdown'
-  # gem.add_runtime_dependency 'gemname', '~> 1.0'
-  # gem.add_development_dependency 'gemname', '~> 1.0'
+  spec.add_runtime_dependency 'authn', '~> 3.0'
+  spec.add_runtime_dependency 'rails', '~> 3.2'
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'yard'
+  spec.add_development_dependency 'kramdown'
+  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'coveralls'
+  # spec.add_runtime_dependency 'gem', '~> 1.0'
+  # spec.add_development_dependency 'gem', '~> 1.0'
 end

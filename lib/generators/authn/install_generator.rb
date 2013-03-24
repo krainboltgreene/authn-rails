@@ -11,7 +11,7 @@ module AuthN
 
       # Copy the initializer file to config/initializers folder.
       def copy_initializer_file
-        template "initializer.rb", "config/initializers/authn.rb"
+        template "initializer.rb.tt", "config/initializers/authn.rb"
       end
 
       private
