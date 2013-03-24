@@ -1,6 +1,14 @@
 CHANGELOG
 ---------
 
+1.8.0 / 2013-03-24
+==================
+
+  * Updating some of the repository files
+  * Adding coveralls
+  * Adding badges
+  * Fixing helper bug
+
 1.7.4 / 2012-09-21
 ==================
 

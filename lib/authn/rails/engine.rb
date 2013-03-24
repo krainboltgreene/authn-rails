@@ -6,8 +6,8 @@ module AuthN
 
     initializer "Extend ActionController with AuthN" do |app|
       ActionController::Base.send :include, AuthN::Session
-      ActionController::Base.helper_method :current_user
-      ActionController::Base.helper_method :logged_in?
+      ActionController::Base.helper :current_user
+      ActionController::Base.helper :logged_in?
     end
   end
 end

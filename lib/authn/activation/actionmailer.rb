@@ -4,7 +4,7 @@ module AuthN
 
       private
 
-      def send_activation_mail
+      def activation_mail
 
       end
     end

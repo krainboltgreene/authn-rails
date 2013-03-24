@@ -1,6 +1,12 @@
 AuthN Rails
 -----------
 
+  - [![Gem Version](https://badge.fury.io/rb/authn-rails.png)](https://rubygems.org/gems/authn-rails)
+  - [![Code Climate](https://codeclimate.com/github/krainboltgreene/authn-rails.png)](https://codeclimate.com/github/krainboltgreene/authn-rails)
+  - [![Build Status](https://travis-ci.org/krainboltgreene/authn-rails.png)](https://travis-ci.org/krainboltgreene/authn-rails)
+  - [![Dependency Status](https://gemnasium.com/krainboltgreene/authn-rails.png)](https://gemnasium.com/krainboltgreene/authn-rails)
+  - [![Coverage Status](https://coveralls.io/repos/krainboltgreene/authn-rails/badge.png?branch=master)](https://coveralls.io/r/krainboltgreene/authn-rails)
+
 authn-rails is an extention of the AuthN library to give easy integration into Rails framework.
 
 
